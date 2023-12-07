@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mysql-service:
+    image: mysql:latest
+    container_name: mysql-service
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    networks:
+      - project_network
+    volumes:
+      - dbvol:/data/db
+      - dbvolconfig:/data/configdb
+
+  backend:
+    image: imadrahhali/backend:1.0.0
+    container_name: backend
+    ports:
+      - 8080:8080
+    networks:
+      - project_network
+    depends_on:
+      - mysql-service
+
+  frontend:
+    image: imadrahhali/frontend:1.0.0
+    container_name: frontend
+    ports:
+      - 80:80
+    networks:
+      - project_network
+    depends_on:
+      - backend
+      
+volumes:
+      dbvol:
+        driver: local
+      dbvolconfig:
+        driver: local
+
+networks:
+  project_network:
+    driver: bridge
+

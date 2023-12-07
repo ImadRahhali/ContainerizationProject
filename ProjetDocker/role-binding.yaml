@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: exam
+  name: exam-resource-access
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services", "configmaps","deployments","statefulsets","secrets"] 
+  verbs: ["get", "list", "watch"]  
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: exam-resource-access-binding
+  namespace: exam
+subjects:
+- kind: User
+  name: system:serviceaccount:exam:default
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role 
+  name: exam-resource-access
+  apiGroup: rbac.authorization.k8s.io
