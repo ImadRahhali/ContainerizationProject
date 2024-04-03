@@ -1,7 +1,7 @@
 # Containerization of a 3-tier Web Application
 
 ## Project Description
-This project involves the containerization of a 3-tier web application consisting of a frontend (Angular), backend (Java/Spring), and a MySQL database. The source code for this application is available in the following repositories: [frontend]([link-to-frontend-repo](https://github.com/bezkoder/angular-16-crud-example)) and [backend]([link-to-backend-repo](https://github.com/bezkoder/spring-boot-data-jpa-mysql)).
+This project involves the containerization of a 3-tier web application consisting of a frontend (Angular), backend (Java/Spring), and a MySQL database. The source code for this application is available in the following repositories: [frontend]([https://github.com/bezkoder/angular-16-crud-example]) and [backend]([https://github.com/bezkoder/spring-boot-data-jpa-mysql]).
 
 ## Completed Tasks
 1. **MySQL Database Containerization**
@@ -13,7 +13,7 @@ This project involves the containerization of a 3-tier web application consistin
    - Applied good practices such as using multi-stage builds, minimizing layers, and specifying version pinning for dependencies.
 
 3. **Frontend Dockerization**
-   - Created a Dockerfile for the Frontend project and applied best practices similar to the Backend Dockerfile.
+   - Created a Dockerfile for the Frontend project and applied best practices (similar to the Backend Dockerfile).
 
 4. **Docker Network**
    - Created a Docker network with an appropriate driver and connected the MySQL database container to this network.
@@ -25,18 +25,13 @@ This project involves the containerization of a 3-tier web application consistin
 6. **Application Deployment**
    - Successfully deployed the application using docker-compose.
    - Created docker-compose.yml file defining services for frontend, backend, and MySQL database.
-   - Ensured application functionality by testing in the browser and taking screenshots.
+   - Ensured application functionality by testing in the browser.
 
 7. **Kubernetes Deployment**
-   - Created Kubernetes manifests (YAML files) for deploying the application in a Kubernetes cluster under the "exam" namespace.
+   - Created Kubernetes manifests (YAML files) for deploying the application in a Kubernetes cluster
    - Configured resource quotas, RBAC controls, health checks, and ingress for the application.
-   - Tested application functionality in Kubernetes cluster and provided screenshots.
+   - Tested application functionality in Kubernetes cluster.
 
 8. **Private Docker Image Registry**
    - Created a local private Docker image registry to store and manage built images.
 
-## Additional Notes
-- Ensure to remove running containers and images from the Docker host after completing tasks.
-- Refer to the project documentation and associated files in the repositories for detailed instructions and configurations.
-
-For more information and detailed instructions, please refer to the project documentation and associated files in the respective repositories.
